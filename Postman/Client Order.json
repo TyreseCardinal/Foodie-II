@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "1837eb83-f857-4c7a-b5f8-2694b75774a2",
+		"name": "Client Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28586162"
+	},
+	"item": [
+		{
+			"name": "Retrieve a list of orders placed by the logged-in client",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <session_token>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/client-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"client-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new order for the logged-in client",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <session_token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"restaurant_id\": 1,\r\n    \"order_items\": [\r\n        {\r\n            \"menu_item_id\": 1,\r\n            \"quantity\": 2,\r\n            \"price\": 9.99\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/client-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"client-order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

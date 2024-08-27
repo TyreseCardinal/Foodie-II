@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "39682b42-cfc8-4777-8224-9e47c8146ac8",
+		"name": "Menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28586162"
+	},
+	"item": [
+		{
+			"name": "Retrieve a list of all menu items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/menu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new menu item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"restaurant_id\": 1,\r\n    \"name\": \"Burger\",\r\n    \"description\": \"Juicy beef burger with cheese\",\r\n    \"price\": 9.99\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/menu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a menu item by Menu Item ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 10.99,\r\n    \"description\": \"Juicy beef burger with extra cheese\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/menu?menu_item_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"menu"
+					],
+					"query": [
+						{
+							"key": "menu_item_id",
+							"value": null,
+							"description": "`menu_item_id` in URL path"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a menu item by Menu Item ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/menu?menu_item_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"menu"
+					],
+					"query": [
+						{
+							"key": "menu_item_id",
+							"value": null,
+							"description": "`menu_item_id` in URL path"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

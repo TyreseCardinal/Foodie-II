@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "fd662502-4f96-4fd5-b312-f85f729d70f2",
+		"name": "Restaurant Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28586162"
+	},
+	"item": [
+		{
+			"name": "Log in a restaurant and create a session",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Good Eats\",\r\n    \"email\": \"goodeats@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/restaurant-login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"restaurant-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log out a restaurant and delete the session",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <session_token>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/restaurant-login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"restaurant-login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
